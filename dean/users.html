@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts - TabulationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Unified Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo"><img src="../assets/img/logo.png" alt="Logo"></div>
+                <span class="brand-name">Tabulation<span class="x-mark">X</span></span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">Management (Dean)</div>
+                <a href="dashboard.html" class="menu-item">
+                    <span class="menu-icon">📊</span><span class="menu-text">Dashboard</span>
+                </a>
+                <a href="academic.html" class="menu-item">
+                    <span class="menu-icon">📅</span><span class="menu-text">Academic Year</span>
+                </a>
+                <a href="events.html" class="menu-item">
+                    <span class="menu-icon">🏆</span><span class="menu-text">Events</span>
+                </a>
+                <a href="teams.html" class="menu-item">
+                    <span class="menu-icon">👥</span><span class="menu-text">Teams</span>
+                </a>
+                <a href="results.html" class="menu-item">
+                    <span class="menu-icon">📈</span><span class="menu-text">Results</span>
+                </a>
+                <a href="users.html" class="menu-item active">
+                    <span class="menu-icon">👤</span><span class="menu-text">Accounts</span>
+                </a>
+
+                <div class="menu-section">Panelist Portal</div>
+                <a href="../panelist/dashboard.html" class="menu-item">
+                    <span class="menu-icon">⚖️</span><span class="menu-text">Evaluation Board</span>
+                </a>
+
+                <div class="menu-section">Students Portal</div>
+                <a href="../student/dashboard.html" class="menu-item">
+                    <span class="menu-icon">🎓</span><span class="menu-text">Student Portal</span>
+                </a>
+                
+                <div class="menu-section">External</div>
+                <a href="../login.html" class="menu-item">
+                    <span class="menu-icon">🔐</span><span class="menu-text">Logout Simulation</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="page-title-badge">
+                        <span class="dot"></span>
+                        Account Management
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <button class="btn btn-primary" onclick="showCreateAlert()" style="height: 42px; font-size: 0.8rem; border-radius: 10px;">+ Create New Account</button>
+                </div>
+            </header>
+
+            <div class="content-body animate-fade-in">
+                <div class="page-header" style="margin-bottom: 2rem;">
+                    <div>
+                        <h1>User Directory</h1>
+                        <p style="color: var(--text-light); margin-top: 0.5rem; font-size: 1.1rem;">Create and manage system access for all participants.</p>
+                    </div>
+                </div>
+
+                <div class="card stat-card primary-top" style="padding: 0; overflow: hidden;">
+                    <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border); background: var(--light); display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="margin: 0; font-size: 1.25rem;">Active Accounts</h3>
+                            <p style="color: var(--text-light); font-size: 0.8125rem; margin-top: 0.15rem;">Registered users in the administration board.</p>
+                        </div>
+                        <div style="background: var(--surface); padding: 4px 12px; border-radius: 20px; border: 1px solid var(--border); font-size: 0.7rem; font-weight: 800; color: var(--text-light);">TOTAL: 3</div>
+                    </div>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="text-align: left;">
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase;">Access Role</th>
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase;">User Identity</th>
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase;">Account ID</th>
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase; text-align: right;">Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem;"><span style="background:#e0e7ff; color:#3730a3; padding:4px 10px; border-radius:12px; font-size:0.65rem; font-weight:800;">DEAN</span></td>
+                                <td style="padding: 1.5rem 2rem;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--primary-subtle); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800;">D</div>
+                                        <strong>Dean Christopher</strong>
+                                    </div>
+                                </td>
+                                <td style="padding: 1.5rem 2rem; font-family: monospace; font-size: 0.85rem;">dean_admin_01</td>
+                                <td style="padding: 1.5rem 2rem; text-align: right;">
+                                    <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                                        <button style="background: var(--primary-subtle); border: none; width: 34px; height: 34px; border-radius: 8px; cursor: pointer; color: var(--primary);">✏️</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem;"><span style="background:#dbeafe; color:#1e40af; padding:4px 10px; border-radius:12px; font-size:0.65rem; font-weight:800;">PANELIST</span></td>
+                                <td style="padding: 1.5rem 2rem;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--primary-subtle); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800;">P</div>
+                                        <strong>Prof. Rodriguez</strong>
+                                    </div>
+                                </td>
+                                <td style="padding: 1.5rem 2rem; font-family: monospace; font-size: 0.85rem;">faculty_rod_26</td>
+                                <td style="padding: 1.5rem 2rem; text-align: right;">
+                                    <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                                        <button style="background: var(--primary-subtle); border: none; width: 34px; height: 34px; border-radius: 8px; cursor: pointer; color: var(--primary);">✏️</button>
+                                        <button style="background: var(--danger-subtle); border: none; width: 34px; height: 34px; border-radius: 8px; cursor: pointer; color: var(--danger);">🗑️</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showCreateAlert() {
+            Swal.fire({
+                title: 'Register New Account',
+                html: `
+                    <input id="swal-input1" class="swal2-input" placeholder="Full Name">
+                    <select id="swal-input2" class="swal2-select">
+                        <option value="">Select Role</option>
+                        <option value="dean">Dean</option>
+                        <option value="panelist">Panelist</option>
+                        <option value="student">Student</option>
+                    </select>
+                `,
+                focusConfirm: false,
+                confirmButtonText: 'Create Account',
+                confirmButtonColor: '#3b42f3',
+                showCancelButton: true,
+                preConfirm: () => {
+                    const name = document.getElementById('swal-input1').value;
+                    const role = document.getElementById('swal-input2').value;
+                    if (!name || !role) {
+                        Swal.showValidationMessage(`Please enter both name and role`)
+                    }
+                    return { name: name, role: role }
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Account Created',
+                        text: `Success! ${result.value.name} has been added as a ${result.value.role}.`,
+                        confirmButtonColor: '#3b42f3'
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

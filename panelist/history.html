@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoring History - TabulationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Panelist Portal Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo"><img src="../assets/img/logo.png" alt="Logo"></div>
+                <span class="brand-name">Tabulation<span class="x-mark">X</span></span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">Management (Dean)</div>
+                <a href="../dean/dashboard.html" class="menu-item">
+                    <span class="menu-icon">📊</span><span class="menu-text">Admin Overview</span>
+                </a>
+
+                <div class="menu-section">Panelist Portal</div>
+                <a href="dashboard.html" class="menu-item">
+                    <span class="menu-icon">⚖️</span><span class="menu-text">Evaluation Board</span>
+                </a>
+                <a href="history.html" class="menu-item active">
+                    <span class="menu-icon">📜</span><span class="menu-text">History</span>
+                </a>
+
+                <div class="menu-section">Students Portal</div>
+                <a href="../student/dashboard.html" class="menu-item">
+                    <span class="menu-icon">🎓</span><span class="menu-text">Student Portal</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="page-title-badge">
+                        <span class="dot"></span>
+                        Scoring Archives
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">Prof. Rodriguez</span>
+                            <span class="user-role">Official Panelist</span>
+                        </div>
+                        <div class="user-avatar">⚖️</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body animate-fade-in">
+                <div class="page-header" style="margin-bottom: 2rem;">
+                    <div>
+                        <h1>Evaluation History</h1>
+                        <p style="color: var(--text-light); margin-top: 0.5rem; font-size: 1.1rem;">Review your finalized scores and comments from past groups.</p>
+                    </div>
+                </div>
+
+                <div class="card stat-card primary-top" style="padding: 0; overflow: hidden;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: var(--light); text-align: left;">
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase;">Date Submitted</th>
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase;">Research Group</th>
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase;">Average Score</th>
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase; text-align: right;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem; font-size: 0.85rem; color: var(--text-light);">Mar 14, 2026</td>
+                                <td style="padding: 1.5rem 2rem;"><strong>Agile Squad</strong><br><small>Smart Logistics Tracker</small></td>
+                                <td style="padding: 1.5rem 2rem; font-weight: 700; color: var(--primary);">9.25 / 10</td>
+                                <td style="padding: 1.5rem 2rem; text-align: right;"><span style="color:var(--success); font-weight:800; font-size:0.7rem;">SUBMITTED</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem; font-size: 0.85rem; color: var(--text-light);">Mar 14, 2026</td>
+                                <td style="padding: 1.5rem 2rem;"><strong>Quantum AI</strong><br><small>NLP for Philippine Dialects</small></td>
+                                <td style="padding: 1.5rem 2rem; font-weight: 700; color: var(--primary);">8.90 / 10</td>
+                                <td style="padding: 1.5rem 2rem; text-align: right;"><span style="color:var(--success); font-weight:800; font-size:0.7rem;">SUBMITTED</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

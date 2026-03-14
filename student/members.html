@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members - TabulationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Consistent Student Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo"><img src="../assets/img/logo.png" alt="Logo"></div>
+                <span class="brand-name">Tabulation<span class="x-mark">X</span></span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">Management (Dean)</div>
+                <a href="../dean/dashboard.html" class="menu-item">
+                    <span class="menu-icon">📊</span><span class="menu-text">Admin Overview</span>
+                </a>
+
+                <div class="menu-section">Panelist Portal</div>
+                <a href="../panelist/dashboard.html" class="menu-item">
+                    <span class="menu-icon">⚖️</span><span class="menu-text">Evaluation Board</span>
+                </a>
+
+                <div class="menu-section">Students Portal</div>
+                <a href="dashboard.html" class="menu-item">
+                    <span class="menu-icon">🎓</span><span class="menu-text">My Performance</span>
+                </a>
+                <a href="members.html" class="menu-item active">
+                    <span class="menu-icon">🤝</span><span class="menu-text">Team Members</span>
+                </a>
+                
+                <div class="menu-section">External</div>
+                <a href="../login.html" class="menu-item">
+                    <span class="menu-icon">🔐</span><span class="menu-text">Logout Simulation</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="page-title-badge">
+                        <span class="dot" style="background: var(--primary)"></span>
+                        Team Management
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">John Doe</span>
+                            <span class="user-role">InnovaTech Leader</span>
+                        </div>
+                        <div class="user-avatar" style="background: var(--primary-subtle); color: var(--primary);">🎓</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body animate-fade-in">
+                <div class="page-header" style="margin-bottom: 2rem;">
+                    <div>
+                        <h1>Team: InnovaTech</h1>
+                        <p style="color: var(--text-light); margin-top: 0.5rem; font-size: 1.1rem;">Manage your group members and assign specific roles for the defense.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Member Card 1 -->
+                    <div class="card stat-card" style="border-top-color: var(--primary); text-align: center; padding: 3rem 2rem;">
+                        <div style="width: 80px; height: 80px; background: var(--primary-subtle); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem; font-weight: 800;">JD</div>
+                        <h3 style="margin-bottom: 0.25rem;">John Doe</h3>
+                        <span style="font-size: 0.7rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; background: var(--primary-subtle); padding: 4px 12px; border-radius: 20px;">Leader / Lead Dev</span>
+                        <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-light);">Primary Architect and Researcher. Lead for the technical presentation.</p>
+                    </div>
+
+                    <!-- Member Card 2 -->
+                    <div class="card stat-card" style="border-top-color: var(--secondary); text-align: center; padding: 3rem 2rem;">
+                        <div style="width: 80px; height: 80px; background: #e2e8f0; color: #475569; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem; font-weight: 800;">AS</div>
+                        <h3 style="margin-bottom: 0.25rem;">Alice Smith</h3>
+                        <span style="font-size: 0.7rem; font-weight: 800; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em; background: #f1f5f9; padding: 4px 12px; border-radius: 20px;">UI/UX Designer</span>
+                        <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-light);">Responsible for the visual identity and user interface prototypes.</p>
+                    </div>
+
+                    <!-- Member Card 3 -->
+                    <div class="card stat-card" style="border-top-color: var(--secondary); text-align: center; padding: 3rem 2rem;">
+                        <div style="width: 80px; height: 80px; background: #e2e8f0; color: #475569; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem; font-weight: 800;">MB</div>
+                        <h3 style="margin-bottom: 0.25rem;">Mark Brown</h3>
+                        <span style="font-size: 0.7rem; font-weight: 800; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em; background: #f1f5f9; padding: 4px 12px; border-radius: 20px;">Quality Assurance</span>
+                        <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-light);">Lead for testing and technical documentation management.</p>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2.5rem; padding: 2.5rem; background: var(--light); border: 2px dashed var(--border);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="margin:0;">Team Readiness Checklist</h3>
+                            <p style="margin-top:0.5rem; color:var(--text-light);">Ensure all members are registered for the colloquium entry.</p>
+                        </div>
+                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--success);">3 / 3 REGISTERED</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

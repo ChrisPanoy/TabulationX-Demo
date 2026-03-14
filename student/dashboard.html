@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - TabulationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Student Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo"><img src="../assets/img/logo.png" alt="Logo"></div>
+                <span class="brand-name">Tabulation<span class="x-mark">X</span></span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">Management (Dean)</div>
+                <a href="../dean/dashboard.html" class="menu-item">
+                    <span class="menu-icon">📊</span><span class="menu-text">Admin Overview</span>
+                </a>
+
+                <div class="menu-section">Panelist Portal</div>
+                <a href="../panelist/dashboard.html" class="menu-item">
+                    <span class="menu-icon">⚖️</span><span class="menu-text">Evaluation Board</span>
+                </a>
+
+                <div class="menu-section">Students Portal</div>
+                <a href="dashboard.html" class="menu-item active">
+                    <span class="menu-icon">🎓</span><span class="menu-text">My Performance</span>
+                </a>
+                <a href="members.html" class="menu-item">
+                    <span class="menu-icon">🤝</span><span class="menu-text">Team Members</span>
+                </a>
+                
+                <div class="menu-section">External</div>
+                <a href="../login.html" class="menu-item">
+                    <span class="menu-icon">🔐</span><span class="menu-text">Logout Simulation</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="page-title-badge">
+                        <span class="dot" style="background: var(--success)"></span>
+                        Student Portfolio
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">John Doe</span>
+                            <span class="user-role">InnovaTech Leader</span>
+                        </div>
+                        <div class="user-avatar" style="background: var(--primary-subtle); color: var(--primary);">🎓</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body animate-fade-in">
+                <div class="page-header" style="margin-bottom: 2.5rem;">
+                    <div>
+                        <h1>InnovaTech Portfolio</h1>
+                        <p style="color: var(--text-light); margin-top: 0.5rem; font-size: 1.1rem;">Track your group's evaluation standing and defense schedule.</p>
+                    </div>
+                    <div style="background: var(--primary-dark); color: white; padding: 1rem 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+                        <span style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,0.6);">Current Standing</span>
+                        <div style="font-size: 1.5rem; font-weight: 800; font-family: var(--font-heading);">PROVISIONAL 1ST</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Status Cards -->
+                    <div class="card stat-card" style="border-top-color: var(--primary);">
+                        <span class="stat-label">Raw Average</span>
+                        <div class="stat-value">9.43</div>
+                        <div style="font-size: 0.8rem; color: var(--text-light);">Accumulated from 5 Panelists</div>
+                    </div>
+                    <div class="card stat-card" style="border-top-color: var(--success);">
+                        <span class="stat-label">Weighted Score</span>
+                        <div class="stat-value">94.2%</div>
+                        <div style="font-size: 0.8rem; color: var(--text-light);">Final system ranking data</div>
+                    </div>
+                    <div class="card stat-card" style="border-top-color: var(--warning);">
+                        <span class="stat-label">Defense Date</span>
+                        <div class="stat-value" style="font-size: 1.5rem; margin: 1.2rem 0;">MAR 20, 2PM</div>
+                        <div style="font-size: 0.8rem; color: var(--text-light);">📍 Multi-Purpose Hall</div>
+                    </div>
+
+                    <!-- Unique Student Analytics -->
+                    <div class="card" style="grid-column: span 2;">
+                        <h3 style="font-size: 1.15rem; font-weight: 700;">Criteria Breakdown (Performance Radar)</h3>
+                        <div class="chart-wrapper"><canvas id="studentRadarChart"></canvas></div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="font-size: 1.15rem; font-weight: 700;">Panelist Consistency</h3>
+                        <div class="chart-wrapper"><canvas id="panelistConsChart"></canvas></div>
+                    </div>
+
+                    <!-- Project Info -->
+                    <div class="card" style="grid-column: 1 / -1; background: var(--light); border: 2px dashed var(--border);">
+                        <div style="display:flex; gap: 2rem; align-items: center;">
+                            <div style="font-size: 3rem;">📁</div>
+                            <div>
+                                <h3 style="margin:0; font-size: 1.25rem;">Project: Neural Predictor for Crop Analysis in Local Farming</h3>
+                                <p style="margin-top: 0.5rem; color: var(--text-light);">Submission Status: <span style="color: var(--success); font-weight: 700;">COMPLETED</span> &bull; Last updated 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { boxWidth: 10, padding: 15, font: { family: 'Inter', size: 10 } }
+                }
+            }
+        };
+
+        // Student Radar - Strengths & Weaknesses
+        const ctxRadar = document.getElementById('studentRadarChart').getContext('2d');
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: ['Technical Logic', 'UI Aesthetics', 'Oral Delivery', 'Documentation', 'Impact'],
+                datasets: [{
+                    label: 'Our Performance',
+                    data: [95, 88, 92, 98, 90],
+                    borderColor: '#3b42f3',
+                    backgroundColor: 'rgba(59, 66, 243, 0.1)',
+                    fill: true,
+                    borderWidth: 3,
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                ...chartOptions,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0,0,0,0.05)' },
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: { display: false },
+                        suggestedMin: 50,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        // Panelist Consistency (Line of Individual Scores)
+        const ctxCons = document.getElementById('panelistConsChart').getContext('2d');
+        new Chart(ctxCons, {
+            type: 'line',
+            data: {
+                labels: ['P1', 'P2', 'P3', 'P4', 'P5'],
+                datasets: [{
+                    label: 'Individual Score',
+                    data: [9.2, 9.5, 9.1, 9.8, 9.4],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    borderWidth: 2,
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                ...chartOptions,
+                scales: {
+                    y: { beginAtZero: false, suggestedMin: 8, max: 10, grid: { color: 'rgba(0,0,0,0.03)' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

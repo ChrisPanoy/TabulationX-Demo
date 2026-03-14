@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - TabulationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Unified Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo"><img src="../assets/img/logo.png" alt="Logo"></div>
+                <span class="brand-name">Tabulation<span class="x-mark">X</span></span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">Management (Dean)</div>
+                <a href="dashboard.html" class="menu-item">
+                    <span class="menu-icon">📊</span><span class="menu-text">Dashboard</span>
+                </a>
+                <a href="academic.html" class="menu-item">
+                    <span class="menu-icon">📅</span><span class="menu-text">Academic Year</span>
+                </a>
+                <a href="events.html" class="menu-item">
+                    <span class="menu-icon">🏆</span><span class="menu-text">Events</span>
+                </a>
+                <a href="teams.html" class="menu-item">
+                    <span class="menu-icon">👥</span><span class="menu-text">Teams</span>
+                </a>
+                <a href="results.html" class="menu-item active">
+                    <span class="menu-icon">📈</span><span class="menu-text">Results</span>
+                </a>
+                <a href="users.html" class="menu-item">
+                    <span class="menu-icon">👤</span><span class="menu-text">Accounts</span>
+                </a>
+
+                <div class="menu-section">Panelist Portal</div>
+                <a href="../panelist/dashboard.html" class="menu-item">
+                    <span class="menu-icon">⚖️</span><span class="menu-text">Evaluation Board</span>
+                </a>
+
+                <div class="menu-section">Students Portal</div>
+                <a href="../student/dashboard.html" class="menu-item">
+                    <span class="menu-icon">🎓</span><span class="menu-text">Student Portal</span>
+                </a>
+                
+                <div class="menu-section">External</div>
+                <a href="../login.html" class="menu-item">
+                    <span class="menu-icon">🔐</span><span class="menu-text">Logout Simulation</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="page-title-badge">
+                        <span class="dot" style="background: var(--success)"></span>
+                        Live Reports
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <button class="btn btn-primary" style="height: 42px; font-size: 0.8rem; border-radius: 10px;">Print Official Report</button>
+                </div>
+            </header>
+
+            <div class="content-body animate-fade-in">
+                <div class="page-header" style="margin-bottom: 2rem;">
+                    <div>
+                        <h1>Real-time Standings</h1>
+                        <p style="color: var(--text-light); margin-top: 0.5rem; font-size: 1.1rem;">Official tabulation rankings for <strong>Capstone Colloquium 2026</strong></p>
+                    </div>
+                </div>
+
+                <div class="card stat-card primary-top" style="padding: 0; overflow: hidden;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: var(--light); text-align: left;">
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase;">Rank</th>
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase;">Capstone Group</th>
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase;">Raw Score</th>
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase;">Weighted Avg</th>
+                                <th style="padding: 1.25rem 2rem; font-size: 0.7rem; text-transform: uppercase; text-align: right;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem;"><span style="background:gold; color:black; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-weight:900; font-size: 0.9rem;">1</span></td>
+                                <td style="padding: 1.5rem 2rem;"><strong>InnovaTech</strong><br><small style="color:var(--text-light); font-weight: 500;">Neural Predictor for Crop Analysis</small></td>
+                                <td style="padding: 1.5rem 2rem; font-weight: 600; color: var(--text-main);">9.43 / 10</td>
+                                <td style="padding: 1.5rem 2rem; color: var(--primary); font-weight: 950; font-size: 1.25rem;">94.25%</td>
+                                <td style="padding: 1.5rem 2rem; text-align: right;"><span style="color:var(--success); font-weight:800; font-size: 0.75rem;">OFFICIAL</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem;"><span style="background:silver; color:black; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-weight:900; font-size: 0.9rem;">2</span></td>
+                                <td style="padding: 1.5rem 2rem;"><strong>Visionary</strong><br><small style="color:var(--text-light); font-weight: 500;">Smart Traffic Management</small></td>
+                                <td style="padding: 1.5rem 2rem; font-weight: 600; color: var(--text-main);">9.15 / 10</td>
+                                <td style="padding: 1.5rem 2rem; color: var(--primary); font-weight: 950; font-size: 1.25rem;">91.50%</td>
+                                <td style="padding: 1.5rem 2rem; text-align: right;"><span style="color:var(--success); font-weight:800; font-size: 0.75rem;">OFFICIAL</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem;"><span style="background:#cd7f32; color:white; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-weight:900; font-size: 0.9rem;">3</span></td>
+                                <td style="padding: 1.5rem 2rem;"><strong>CodeBlue</strong><br><small style="color:var(--text-light); font-weight: 500;">Blockchain Voting</small></td>
+                                <td style="padding: 1.5rem 2rem; font-weight: 600; color: var(--text-main);">8.86 / 10</td>
+                                <td style="padding: 1.5rem 2rem; color: var(--primary); font-weight: 950; font-size: 1.25rem;">88.60%</td>
+                                <td style="padding: 1.5rem 2rem; text-align: right;"><span style="color:var(--warning); font-weight:800; font-size: 0.75rem;">PARTIAL</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

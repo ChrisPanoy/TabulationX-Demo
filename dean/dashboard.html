@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dean Dashboard - TabulationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Unified Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo"><img src="../assets/img/logo.png" alt="Logo"></div>
+                <span class="brand-name">Tabulation<span class="x-mark">X</span></span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">Management (Dean)</div>
+                <a href="dashboard.html" class="menu-item active">
+                    <span class="menu-icon">📊</span><span class="menu-text">Dashboard</span>
+                </a>
+                <a href="academic.html" class="menu-item">
+                    <span class="menu-icon">📅</span><span class="menu-text">Academic Year</span>
+                </a>
+                <a href="events.html" class="menu-item">
+                    <span class="menu-icon">🏆</span><span class="menu-text">Events</span>
+                </a>
+                <a href="teams.html" class="menu-item">
+                    <span class="menu-icon">👥</span><span class="menu-text">Teams</span>
+                </a>
+                <a href="results.html" class="menu-item">
+                    <span class="menu-icon">📈</span><span class="menu-text">Results</span>
+                </a>
+                <a href="users.html" class="menu-item">
+                    <span class="menu-icon">👤</span><span class="menu-text">Accounts</span>
+                </a>
+
+                <div class="menu-section">Panelist Portal</div>
+                <a href="../panelist/dashboard.html" class="menu-item">
+                    <span class="menu-icon">⚖️</span><span class="menu-text">Evaluation Board</span>
+                </a>
+
+                <div class="menu-section">Students Portal</div>
+                <a href="../student/dashboard.html" class="menu-item">
+                    <span class="menu-icon">🎓</span><span class="menu-text">Student Portal</span>
+                </a>
+                
+                <div class="menu-section">External</div>
+                <a href="../login.html" class="menu-item">
+                    <span class="menu-icon">🔐</span><span class="menu-text">Logout Simulation</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="page-title-badge">
+                        <span class="dot"></span>
+                        Admin Overview
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">Dean Christopher</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                        <div class="user-avatar">👤</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body animate-fade-in">
+                <div class="page-header" style="margin-bottom: 2.5rem;">
+                    <div>
+                        <h1>Executive Dashboard</h1>
+                        <p style="color: var(--text-light); margin-top: 0.5rem; font-size: 1.1rem;">Welcome back, <strong>Dean</strong>. Monitoring active evaluation sessions.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card stat-card">
+                        <span class="stat-label">Total Events</span>
+                        <div class="stat-value">12</div>
+                        <a href="events.html" class="btn btn-secondary" style="width: 100%; justify-content: space-between;">
+                            <span>Manage Sessions</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+                    <div class="card stat-card" style="border-top-color: var(--success);">
+                        <span class="stat-label">Active Teams</span>
+                        <div class="stat-value">48</div>
+                        <a href="teams.html" class="btn btn-secondary" style="width: 100%; justify-content: space-between;">
+                            <span>View All Groups</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+                    <div class="card stat-card" style="border-top-color: var(--warning);">
+                        <span class="stat-label">Active Users</span>
+                        <div class="stat-value">156</div>
+                        <a href="users.html" class="btn btn-secondary" style="width: 100%; justify-content: space-between;">
+                            <span>Manage Accounts</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+
+                    <div class="card" style="grid-column: span 2;">
+                        <h3 style="font-size: 1.15rem; font-weight: 700;">Live Performance Analytics</h3>
+                        <div class="chart-wrapper"><canvas id="performanceChart"></canvas></div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="font-size: 1.15rem; font-weight: 700;">Scoring Consistency</h3>
+                        <div class="chart-wrapper"><canvas id="consistencyChart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 12,
+                        padding: 20,
+                        font: { family: 'Inter', size: 11, weight: 500 }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    grid: { color: 'rgba(0,0,0,0.03)', drawBorder: false },
+                    ticks: { font: { family: 'Inter', size: 10 } }
+                },
+                x: {
+                    grid: { display: false },
+                    ticks: { font: { family: 'Inter', size: 10 } }
+                }
+            }
+        };
+
+        const ctxPerf = document.getElementById('performanceChart').getContext('2d');
+        new Chart(ctxPerf, {
+            type: 'bar',
+            data: {
+                labels: ['InnovateX', 'Visionary', 'CodeBlue', 'Quantum', 'Nexus', 'Agile'],
+                datasets: [
+                    { label: 'Technical Score', data: [88, 92, 85, 78, 94, 89], backgroundColor: '#3b42f3', borderRadius: 6, barThickness: 15 }, 
+                    { label: 'Presentation Score', data: [94, 88, 91, 82, 89, 95], backgroundColor: '#10b981', borderRadius: 6, barThickness: 15 }
+                ]
+            },
+            options: chartOptions
+        });
+
+        const ctxCons = document.getElementById('consistencyChart').getContext('2d');
+        new Chart(ctxCons, {
+            type: 'radar',
+            data: {
+                labels: ['Logic', 'UX/UI', 'Delivery', 'Q&A', 'Originality'],
+                datasets: [{ 
+                    label: 'Panelist Avg', 
+                    data: [85, 90, 78, 92, 88], 
+                    borderColor: '#3b42f3', 
+                    backgroundColor: 'rgba(59, 66, 243, 0.15)', 
+                    fill: true,
+                    borderWidth: 2,
+                    pointRadius: 3
+                }]
+            },
+            options: {
+                ...chartOptions,
+                scales: {
+                    r: {
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        angleLines: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: { display: false },
+                        suggestedMin: 50,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - TabulationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo">
+                    <img src="../assets/img/logo.png" alt="Logo">
+                </div>
+                <span class="brand-name">Tabulation<span class="x-mark">X</span></span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">Presentation</div>
+                <a href="../index.html" class="menu-item">
+                    <span class="menu-icon">📊</span>
+                    <span class="menu-text">Main Page</span>
+                </a>
+                <a href="../login.html" class="menu-item">
+                    <span class="menu-icon">🔐</span>
+                    <span class="menu-text">Login View</span>
+                </a>
+
+                <div class="menu-section">Perspectives</div>
+                <a href="student.html" class="menu-item active">
+                    <span class="menu-icon">🎓</span>
+                    <span class="menu-text">Student Portal</span>
+                </a>
+                <a href="faculty.html" class="menu-item">
+                    <span class="menu-icon">⚖️</span>
+                    <span class="menu-text">Faculty Portal</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="footer-content">
+                    <p>&copy; 2026 TabulationX</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="page-title-badge">
+                        <span class="dot"></span>
+                        Student Perspective
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">John Doe (Student)</span>
+                            <span class="user-role">Demo Perspective</span>
+                        </div>
+                        <div class="user-avatar">🎓</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body animate-fade-in">
+                <div class="page-header">
+                    <div>
+                        <h1>My Capstone Projects</h1>
+                        <p class="subtitle">Monitor your team's progress and upload your project artifacts.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card" style="grid-column: span 2;">
+                        <h3>Active Submissions</h3>
+                        <div style="margin-top: 1.5rem;">
+                            <div style="padding: 1rem; border: 1px solid var(--border); border-radius: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <div>
+                                    <h4 style="margin:0">Software Documentation.pdf</h4>
+                                    <span style="font-size: 0.8rem; color: var(--text-light)">Uploaded 2 days ago</span>
+                                </div>
+                                <span style="background: var(--success); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">APPROVED</span>
+                            </div>
+                            <div style="padding: 1rem; border: 1px solid var(--border); border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin:0">System Prototype (Video)</h4>
+                                    <span style="font-size: 0.8rem; color: var(--text-light)">Uploaded today at 10:45 AM</span>
+                                </div>
+                                <span style="background: var(--warning); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">UNDER REVIEW</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card warning-top">
+                        <h3>Team Status</h3>
+                        <div style="margin-top: 1.5rem; text-align: center;">
+                            <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">88.4%</div>
+                            <p style="color: var(--text-light);">Current Peer Evaluation Avg</p>
+                            <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--border);">
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; text-align: left;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Team Quality</span>
+                                    <strong>High</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Deadlines Met</span>
+                                    <strong>4/5</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

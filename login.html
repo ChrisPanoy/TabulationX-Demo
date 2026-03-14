@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - TabulationX Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .login-page {
+            background: linear-gradient(135deg, #1e40af 0%, #1e1b4b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+        .login-card {
+            width: 100%;
+            max-width: 440px;
+            padding: 3.5rem 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .login-logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 1.5rem;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .login-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-family: inherit;
+        }
+        .btn-login {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        .btn-login:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 10px 20px rgba(59, 66, 243, 0.3);
+        }
+    </style>
+</head>
+<body class="login-page">
+    <div class="login-card animate-fade-in">
+        <div class="login-header">
+            <div class="login-logo">
+                <img src="assets/img/logo.png" alt="Logo">
+            </div>
+            <h1 style="font-size: 2rem; margin-bottom: 0.25rem;">Tabulation<span style="color:var(--primary)">X</span></h1>
+            <p style="color: var(--text-light); font-weight: 500;">Secure Presentation Portal</p>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" placeholder="demo_admin" readonly>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" value="********" readonly>
+        </div>
+        
+        <button onclick="handleLogin()" class="btn-login">
+            Enter Demo Experience
+        </button>
+        
+        <div style="margin-top: 2rem; text-align: center; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+            <p style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Developed By</p>
+            <div style="font-weight: 800; color: var(--dark); font-size: 0.9rem;">SSITE INNOVATORS</div>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin() {
+            Swal.fire({
+                title: 'Authenticating...',
+                text: 'Please wait while we initialize the demo environment.',
+                timer: 1500,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                }
+            }).then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Access Granted',
+                    text: 'Welcome to the TabulationX Executive Demo.',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    window.location.href = 'index.html';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

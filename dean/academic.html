@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Year - TabulationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Unified Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo"><img src="../assets/img/logo.png" alt="Logo"></div>
+                <span class="brand-name">Tabulation<span class="x-mark">X</span></span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">Management (Dean)</div>
+                <a href="dashboard.html" class="menu-item">
+                    <span class="menu-icon">📊</span><span class="menu-text">Dashboard</span>
+                </a>
+                <a href="academic.html" class="menu-item active">
+                    <span class="menu-icon">📅</span><span class="menu-text">Academic Year</span>
+                </a>
+                <a href="events.html" class="menu-item">
+                    <span class="menu-icon">🏆</span><span class="menu-text">Events</span>
+                </a>
+                <a href="teams.html" class="menu-item">
+                    <span class="menu-icon">👥</span><span class="menu-text">Teams</span>
+                </a>
+                <a href="results.html" class="menu-item">
+                    <span class="menu-icon">📈</span><span class="menu-text">Results</span>
+                </a>
+                <a href="users.html" class="menu-item">
+                    <span class="menu-icon">👤</span><span class="menu-text">Accounts</span>
+                </a>
+
+                <div class="menu-section">Panelist Portal</div>
+                <a href="../panelist/dashboard.html" class="menu-item">
+                    <span class="menu-icon">⚖️</span><span class="menu-text">Evaluation Board</span>
+                </a>
+
+                <div class="menu-section">Students Portal</div>
+                <a href="../student/dashboard.html" class="menu-item">
+                    <span class="menu-icon">🎓</span><span class="menu-text">Student Portal</span>
+                </a>
+                
+                <div class="menu-section">External</div>
+                <a href="../login.html" class="menu-item">
+                    <span class="menu-icon">🔐</span><span class="menu-text">Logout Simulation</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="page-title-badge">
+                        <span class="dot"></span>
+                        Academic Configuration
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">Dean Christopher</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                        <div class="user-avatar">👤</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body animate-fade-in">
+                <div class="page-header" style="margin-bottom: 3rem;">
+                    <div>
+                        <h1>Academic Year</h1>
+                        <p style="color: var(--text-light); margin-top: 0.5rem; font-size: 1.1rem;">Manage school years and define the active system session.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card animate-fade-in primary-top">
+                        <div style="margin-bottom: 2rem;">
+                            <h3 style="margin: 0; font-size: 1.5rem; letter-spacing: -0.02em;">Register New Session</h3>
+                            <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 0.25rem;">Create a new entry for the academic calendar.</p>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label class="form-label" style="font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; color: var(--text-light);">School Year Label</label>
+                            <input type="text" placeholder="e.g. 2025-2026" class="form-control" style="height: 52px; font-size: 1rem; border-radius: var(--radius-md);">
+                            <small style="color: var(--text-light); display: block; margin-top: 0.75rem; font-style: italic;">New sessions are initialized as inactive.</small>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%; height: 52px; font-weight: 700;">Create Session</button>
+                    </div>
+
+                    <div class="card stat-card animate-fade-in primary-top" style="padding: 0;">
+                        <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border); background: var(--light); display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.25rem; letter-spacing: -0.01em;">Session Archives</h3>
+                                <p style="color: var(--text-light); font-size: 0.8125rem; margin-top: 0.15rem;">Review and manage past academic years.</p>
+                            </div>
+                            <div style="background: var(--surface); padding: 4px 12px; border-radius: 20px; border: 1px solid var(--border); font-size: 0.7rem; font-weight: 800; color: var(--text-light);">HISTORY</div>
+                        </div>
+                        <div style="padding: 1rem 0;">
+                            <div style="padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border);">
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--success)"></div>
+                                    <strong style="font-size: 1.05rem; color: var(--dark);">2025-2026</strong>
+                                </div>
+                                <span style="font-size: 0.65rem; font-weight: 800; padding: 5px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; background: #ecfdf5; color: #059669; border: 1px solid #10b981;">ACTIVE</span>
+                            </div>
+                            <div style="padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border);">
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--border)"></div>
+                                    <strong style="font-size: 1.05rem; color: var(--dark);">2024-2025</strong>
+                                </div>
+                                <span style="font-size: 0.65rem; font-weight: 800; padding: 5px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0;">INACTIVE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

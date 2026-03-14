@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluate Team - TabulationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .scoring-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+        }
+        .scoring-row:last-child { border-bottom: none; }
+        .score-input-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+        .score-box {
+            width: 80px;
+            height: 50px;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            border: 2px solid var(--primary-subtle);
+            border-radius: var(--radius-md);
+            transition: 0.2s;
+        }
+        .score-box:focus {
+            border-color: var(--primary);
+            background: var(--primary-subtle);
+            outline: none;
+        }
+        .criteria-info h4 { margin: 0; font-size: 1rem; color: var(--dark); }
+        .criteria-info p { margin: 0.25rem 0 0; font-size: 0.8rem; color: var(--text-light); }
+        
+        .total-sticky {
+            position: sticky;
+            bottom: 2rem;
+            background: var(--primary-dark);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: var(--radius-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-lg);
+            margin-top: 3rem;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo"><img src="../assets/img/logo.png" alt="Logo"></div>
+                <span class="brand-name">Tabulation<span class="x-mark">X</span></span>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="menu-section">Perspectives</div>
+                <a href="../dean/dashboard.html" class="menu-item"><span class="menu-icon">📊</span> Admin</a>
+                <a href="dashboard.html" class="menu-item active"><span class="menu-icon">⚖️</span> Panelist</a>
+                <a href="../student/dashboard.html" class="menu-item"><span class="menu-icon">🎓</span> Student</a>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <a href="dashboard.html" style="text-decoration:none; color:var(--text-light); font-size:0.9rem; display:flex; align-items:center; gap:0.5rem;">
+                        <span>&larr;</span> Back to Board
+                    </a>
+                </div>
+                <div class="topbar-right">
+                    <div class="page-title-badge"><span class="dot"></span>Live Scoring Mode</div>
+                </div>
+            </header>
+
+            <div class="content-body animate-fade-in" style="max-width: 900px; margin: 0 auto;">
+                <div class="card" style="margin-bottom: 2rem; border-left: 5px solid var(--primary);">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div>
+                            <span style="font-size:0.7rem; font-weight:800; color:var(--primary); text-transform:uppercase;">Now Evaluating Group</span>
+                            <h1 style="font-size: 2rem; margin-top: 0.25rem;">InnovaTech</h1>
+                            <p style="color: var(--text-light); margin-top: 0.5rem;">Project: Neural Predictor for Crop Analysis in Local Farming</p>
+                        </div>
+                        <div style="text-align:right;">
+                            <span style="display:block; font-size:0.7rem; color:var(--text-light);">PANELIST</span>
+                            <strong style="font-size:1rem;">Prof. Rodriguez</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card primary-top" style="padding: 2.5rem;">
+                    <h3 style="margin-bottom: 2rem; font-size: 1.25rem;">Evaluation Rubric</h3>
+                    
+                    <div class="rubric-container">
+                        <div class="scoring-row">
+                            <div class="criteria-info">
+                                <h4>Technical Complexity (40%)</h4>
+                                <p>Efficiency of algorithms, code structure, and depth of development.</p>
+                            </div>
+                            <div class="score-input-group">
+                                <span style="font-size:0.8rem; color:var(--text-light);">Scale [1-10]</span>
+                                <input type="number" class="score-box" min="1" max="10" value="0" onchange="calculateTotal()">
+                            </div>
+                        </div>
+
+                        <div class="scoring-row">
+                            <div class="criteria-info">
+                                <h4>Presentation & Delivery (30%)</h4>
+                                <p>Clarity of speech, visual aids, and ability to handle panel questions.</p>
+                            </div>
+                            <div class="score-input-group">
+                                <span style="font-size:0.8rem; color:var(--text-light);">Scale [1-10]</span>
+                                <input type="number" class="score-box" min="1" max="10" value="0" onchange="calculateTotal()">
+                            </div>
+                        </div>
+
+                        <div class="scoring-row">
+                            <div class="criteria-info">
+                                <h4>Social Impact & Viability (30%)</h4>
+                                <p>Potential for real-world application and benefit to the community.</p>
+                            </div>
+                            <div class="score-input-group">
+                                <span style="font-size:0.8rem; color:var(--text-light);">Scale [1-10]</span>
+                                <input type="number" class="score-box" min="1" max="10" value="0" onchange="calculateTotal()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2.5rem;">
+                        <label class="form-label">Panelist Remarks / Comments</label>
+                        <textarea class="form-control" style="min-height: 120px; resize: vertical; padding: 1rem;" placeholder="Excellent technical depth, but could improve the UI for farmers..."></textarea>
+                    </div>
+                </div>
+
+                <div class="total-sticky">
+                    <div>
+                        <span style="font-size: 0.75rem; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 700;">Average Calculated Score</span>
+                        <div style="font-size: 2rem; font-weight: 800; font-family: var(--font-heading);" id="totalDisplay">0.00 / 10</div>
+                    </div>
+                    <button class="btn" style="background:var(--success); color:white; padding: 1rem 2.5rem; font-size: 1rem;" onclick="simulateSubmit()">
+                        Finalize & Submit Score
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            const inputs = document.querySelectorAll('.score-box');
+            let total = 0;
+            inputs.forEach(input => {
+                total += parseFloat(input.value || 0);
+            });
+            const avg = (total / inputs.length).toFixed(2);
+            document.getElementById('totalDisplay').innerText = avg + " / 10";
+        }
+
+        function simulateSubmit() {
+            const inputs = document.querySelectorAll('.score-box');
+            let filled = true;
+            inputs.forEach(input => { if(input.value == 0) filled = false; });
+            
+            if(!filled) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Incomplete Evaluation',
+                    text: 'Please provide a score for all criteria before submitting.',
+                    confirmButtonColor: '#3b42f3'
+                });
+                return;
+            }
+
+            Swal.fire({
+                title: 'Submit Evaluation?',
+                text: "You are about to finalize the scores for InnovaTech. This cannot be undone.",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#10b981',
+                cancelButtonColor: '#secondary',
+                confirmButtonText: 'Yes, Submit Now'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your evaluation for InnovaTech has been encrypted and sent to the Dean.',
+                        icon: 'success',
+                        confirmButtonColor: '#3b42f3'
+                    }).then(() => {
+                        window.location.href = 'dashboard.html';
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

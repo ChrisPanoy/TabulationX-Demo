@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - TabulationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Unified Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo"><img src="../assets/img/logo.png" alt="Logo"></div>
+                <span class="brand-name">Tabulation<span class="x-mark">X</span></span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">Management (Dean)</div>
+                <a href="dashboard.html" class="menu-item">
+                    <span class="menu-icon">📊</span><span class="menu-text">Dashboard</span>
+                </a>
+                <a href="academic.html" class="menu-item">
+                    <span class="menu-icon">📅</span><span class="menu-text">Academic Year</span>
+                </a>
+                <a href="events.html" class="menu-item active">
+                    <span class="menu-icon">🏆</span><span class="menu-text">Events</span>
+                </a>
+                <a href="teams.html" class="menu-item">
+                    <span class="menu-icon">👥</span><span class="menu-text">Teams</span>
+                </a>
+                <a href="results.html" class="menu-item">
+                    <span class="menu-icon">📈</span><span class="menu-text">Results</span>
+                </a>
+                <a href="users.html" class="menu-item">
+                    <span class="menu-icon">👤</span><span class="menu-text">Accounts</span>
+                </a>
+
+                <div class="menu-section">Panelist Portal</div>
+                <a href="../panelist/dashboard.html" class="menu-item">
+                    <span class="menu-icon">⚖️</span><span class="menu-text">Evaluation Board</span>
+                </a>
+
+                <div class="menu-section">Students Portal</div>
+                <a href="../student/dashboard.html" class="menu-item">
+                    <span class="menu-icon">🎓</span><span class="menu-text">Student Portal</span>
+                </a>
+                
+                <div class="menu-section">External</div>
+                <a href="../login.html" class="menu-item">
+                    <span class="menu-icon">🔐</span><span class="menu-text">Logout Simulation</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="page-title-badge">
+                        <span class="dot"></span>
+                        Event Management
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">Dean Christopher</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                        <div class="user-avatar">👤</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body animate-fade-in">
+                <div class="page-header" style="margin-bottom: 3rem;">
+                    <div>
+                        <h1>Events</h1>
+                        <p style="color: var(--text-light); margin-top: 0.5rem; font-size: 1.1rem;">Manage evaluation sessions and rubric settings.</p>
+                    </div>
+                </div>
+
+                <div class="card primary-top" style="margin-bottom: 4rem; padding: 2.5rem;">
+                    <div style="margin-bottom: 2.5rem;">
+                        <h3 style="margin: 0; font-size: 1.5rem; letter-spacing: -0.02em;">Register New Event Session</h3>
+                        <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 0.25rem;">Create a formal entry for a tabulation or defense event.</p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; margin-bottom: 2rem;">
+                        <div class="form-group">
+                            <label class="form-label">Event Title</label>
+                            <input type="text" placeholder="e.g. Capstone Expo 2026" class="form-control" style="height: 52px; border-radius: var(--radius-md);">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Date & Time</label>
+                            <input type="datetime-local" class="form-control" style="height: 52px; border-radius: var(--radius-md);">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Venue</label>
+                            <input type="text" placeholder="e.g. Library Hall" class="form-control" style="height: 52px; border-radius: var(--radius-md);">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="padding: 0 2.5rem; height: 52px; font-weight: 700; border-radius: var(--radius-md);">Create Event Profile</button>
+                </div>
+
+                <h2 style="margin-bottom: 2rem; font-size: 1.5rem; letter-spacing: -0.01em;">Existing Sessions</h2>
+                <div class="dashboard-grid">
+                    <div class="card animate-fade-in stat-card primary-top" style="padding: 2rem; display: flex; flex-direction: column;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+                            <div style="flex: 1;">
+                                <span style="font-size: 0.65rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em;">Session Entry</span>
+                                <h3 style="margin: 0; font-size: 1.25rem; color: var(--primary-dark);">Capstone Colloquium 2026</h3>
+                            </div>
+                            <button style="background: var(--primary-subtle); border: none; color: var(--primary); cursor: pointer; width: 36px; height: 36px; border-radius: 10px;">✏️</button>
+                        </div>
+                        <div style="display: grid; gap: 0.75rem; margin-bottom: 2rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; color: var(--text-light); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 12px; background: var(--light);">
+                                <span>📅</span> <strong>March 20, 2:00 PM</strong>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; color: var(--text-light); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 12px;">
+                                <span>📍</span> <strong>Multi-Purpose Hall</strong>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; margin-top: auto;">
+                            <button class="btn btn-secondary" style="flex: 1; font-weight: 700;">Settings</button>
+                            <a href="results.html" class="btn btn-primary" style="flex: 1; font-weight: 700;">Results</a>
+                        </div>
+                    </div>
+
+                    <div class="card animate-fade-in stat-card primary-top" style="padding: 2rem; display: flex; flex-direction: column;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+                            <div style="flex: 1;">
+                                <span style="font-size: 0.65rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em;">Session Entry</span>
+                                <h3 style="margin: 0; font-size: 1.25rem; color: var(--primary-dark);">IT Capstone Part A</h3>
+                            </div>
+                            <button style="background: var(--primary-subtle); border: none; color: var(--primary); cursor: pointer; width: 36px; height: 36px; border-radius: 10px;">✏️</button>
+                        </div>
+                        <div style="display: grid; gap: 0.75rem; margin-bottom: 2rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; color: var(--text-light); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 12px; background: var(--light);">
+                                <span>📅</span> <strong>April 05, 9:00 AM</strong>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; color: var(--text-light); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 12px;">
+                                <span>📍</span> <strong>IT Laboratory 1</strong>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; margin-top: auto;">
+                            <button class="btn btn-secondary" style="flex: 1; font-weight: 700;">Settings</button>
+                            <a href="results.html" class="btn btn-primary" style="flex: 1; font-weight: 700;">Results</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

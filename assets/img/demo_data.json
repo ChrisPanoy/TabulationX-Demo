@@ -1,0 +1,12 @@
+{
+    "stats": {
+        "teams": 124,
+        "ongoing": 42,
+        "pending": 18
+    },
+    "leaderboard": [
+        {"rank": 1, "team": "InnovaTech Solutions", "score": 94.5},
+        {"rank": 2, "team": "Neural Predictor", "score": 92.8},
+        {"rank": 3, "team": "Project Echo", "score": 89.1}
+    ]
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams - TabulationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Unified Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo"><img src="../assets/img/logo.png" alt="Logo"></div>
+                <span class="brand-name">Tabulation<span class="x-mark">X</span></span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">Management (Dean)</div>
+                <a href="dashboard.html" class="menu-item">
+                    <span class="menu-icon">📊</span><span class="menu-text">Dashboard</span>
+                </a>
+                <a href="academic.html" class="menu-item">
+                    <span class="menu-icon">📅</span><span class="menu-text">Academic Year</span>
+                </a>
+                <a href="events.html" class="menu-item">
+                    <span class="menu-icon">🏆</span><span class="menu-text">Events</span>
+                </a>
+                <a href="teams.html" class="menu-item active">
+                    <span class="menu-icon">👥</span><span class="menu-text">Teams</span>
+                </a>
+                <a href="results.html" class="menu-item">
+                    <span class="menu-icon">📈</span><span class="menu-text">Results</span>
+                </a>
+                <a href="users.html" class="menu-item">
+                    <span class="menu-icon">👤</span><span class="menu-text">Accounts</span>
+                </a>
+
+                <div class="menu-section">Panelist Portal</div>
+                <a href="../panelist/dashboard.html" class="menu-item">
+                    <span class="menu-icon">⚖️</span><span class="menu-text">Evaluation Board</span>
+                </a>
+
+                <div class="menu-section">Students Portal</div>
+                <a href="../student/dashboard.html" class="menu-item">
+                    <span class="menu-icon">🎓</span><span class="menu-text">Student Portal</span>
+                </a>
+                
+                <div class="menu-section">External</div>
+                <a href="../login.html" class="menu-item">
+                    <span class="menu-icon">🔐</span><span class="menu-text">Logout Simulation</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="page-title-badge">
+                        <span class="dot"></span>
+                        Team Management
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">Dean Christopher</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                        <div class="user-avatar">👤</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body animate-fade-in">
+                <div class="page-header" style="margin-bottom: 3rem;">
+                    <div>
+                        <h1>Teams</h1>
+                        <p style="color: var(--text-light); margin-top: 0.5rem; font-size: 1.1rem;">Initialize groups and assign student leader accounts.</p>
+                    </div>
+                </div>
+
+                <div class="card primary-top" style="margin-bottom: 4rem; padding: 2.5rem;">
+                    <div style="margin-bottom: 2.5rem;">
+                        <h3 style="margin: 0; font-size: 1.5rem; letter-spacing: -0.02em;">Initialize New Team Profile</h3>
+                        <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 0.25rem;">Create a formal entry for a capstone research group.</p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; margin-bottom: 2rem;">
+                        <div class="form-group">
+                            <label class="form-label">Group Name</label>
+                            <input type="text" placeholder="e.g. InnovateX Solutions" class="form-control" style="height: 52px; border-radius: var(--radius-md);">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Project Title</label>
+                            <input type="text" placeholder="Project Name" class="form-control" style="height: 52px; border-radius: var(--radius-md);">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Group Leader</label>
+                            <select class="form-control" style="height: 52px; border-radius: var(--radius-md); appearance: auto;">
+                                <option>-- Select Student --</option>
+                                <option>John Doe</option>
+                                <option>Jane Smith</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="padding: 0 2.5rem; height: 52px; font-weight: 700; border-radius: var(--radius-md);">Initialize Team Profile</button>
+                </div>
+
+                <h2 style="margin-bottom: 2rem; font-size: 1.5rem; letter-spacing: -0.01em;">Active Capstone Groups</h2>
+                <div class="dashboard-grid">
+                    <div class="card stat-card primary-top animate-fade-in" style="padding: 2.5rem; display: flex; flex-direction: column;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                            <div style="flex: 1;">
+                                <span style="font-size: 0.65rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Group Entry</span>
+                                <h3 style="margin: 0.25rem 0; font-size: 1.5rem; color: var(--primary-dark);">InnovaTech</h3>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button style="background: var(--primary-subtle); border: none; width: 36px; height: 36px; border-radius: 10px; cursor: pointer; color: var(--primary);">✏️</button>
+                                <button style="background: var(--danger-subtle); border: none; width: 36px; height: 36px; border-radius: 10px; cursor: pointer; color: var(--danger);">&times;</button>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main); line-height: 1.4;">Neural Predictor for Crop Analysis in Local Farming</h4>
+                        <div style="display: grid; gap: 0.75rem; margin-top: auto;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; color: var(--text-light); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 12px; background: var(--light);">
+                                <span>👤</span> <strong>John Doe</strong>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; color: var(--text-light); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 12px;">
+                                <span>📅</span> <strong>Mar 15, 2:00 PM • Colloquium 2026</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card stat-card primary-top animate-fade-in" style="padding: 2.5rem; display: flex; flex-direction: column;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                            <div style="flex: 1;">
+                                <span style="font-size: 0.65rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Group Entry</span>
+                                <h3 style="margin: 0.25rem 0; font-size: 1.5rem; color: var(--primary-dark);">CodeBlue</h3>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button style="background: var(--primary-subtle); border: none; width: 36px; height: 36px; border-radius: 10px; cursor: pointer; color: var(--primary);">✏️</button>
+                                <button style="background: var(--danger-subtle); border: none; width: 36px; height: 36px; border-radius: 10px; cursor: pointer; color: var(--danger);">&times;</button>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main); line-height: 1.4;">Blockchain-based Secure Voting Ecosystem</h4>
+                        <div style="display: grid; gap: 0.75rem; margin-top: auto;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; color: var(--text-light); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 12px; background: var(--light);">
+                                <span>👤</span> <strong>Jane Smith</strong>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; color: var(--text-light); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 12px;">
+                                <span>📅</span> <strong>Apr 05, 9:00 AM • IT Capstone Part A</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
