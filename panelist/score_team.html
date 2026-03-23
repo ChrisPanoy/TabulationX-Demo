@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .scoring-row {
@@ -77,6 +78,7 @@
         <main class="main-wrapper">
             <header class="topbar">
                 <div class="topbar-left">
+                    <button id="sidebar-toggle" class="mobile-toggle">☰</button>
                     <a href="dashboard.html" style="text-decoration:none; color:var(--text-light); font-size:0.9rem; display:flex; align-items:center; gap:0.5rem;">
                         <span>&larr;</span> Back to Board
                     </a>
@@ -206,5 +208,6 @@
             });
         }
     </script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

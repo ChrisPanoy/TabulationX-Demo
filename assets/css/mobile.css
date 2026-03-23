@@ -1,0 +1,170 @@
+/* 
+   TabulationX Mobile Optimization Styles
+   Specifically for mobile-first experience and handling sidebar interactions.
+*/
+
+:root {
+    --header-height: 60px;
+    --sidebar-width: 280px;
+}
+
+@media (max-width: 1100px) {
+    /* Layout Adjustments */
+    .app-container {
+        display: block; /* Stack on mobile */
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        width: var(--sidebar-width);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 15px 0 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-wrapper {
+        margin-left: 0 !important;
+        padding-top: 0;
+    }
+
+    .topbar {
+        height: var(--header-height);
+        padding: 0 1.25rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 998;
+    }
+
+    .content-body {
+        padding: calc(var(--header-height) + 1.5rem) 1.25rem 3rem !important;
+    }
+
+    /* Mobile Navigation Button (Hamburger) - CSS-only 3-Bar Icon */
+    .mobile-toggle {
+        display: flex !important;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: var(--primary) !important;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin-right: 1.25rem;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(59, 66, 243, 0.2);
+        color: transparent; /* Hide character just in case */
+        overflow: hidden;
+    }
+
+    .mobile-toggle::before,
+    .mobile-toggle::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background: white;
+        transition: 0.3s;
+    }
+
+    .mobile-toggle::before { transform: translateY(-6px); box-shadow: 0 6px 0 white; }
+    .mobile-toggle::after { transform: translateY(6px); }
+
+    /* When active (if we want to add rotation later) */
+    body.sidebar-open .mobile-toggle::before { transform: translate(0) rotate(45deg); box-shadow: none; }
+    body.sidebar-open .mobile-toggle::after { transform: translate(0) rotate(-45deg); }
+
+    /* UI Adjustments */
+    .topbar-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .page-title-badge {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .user-info {
+        display: none !important; /* Hide name/role on small screens to save space */
+    }
+
+    .user-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Page Headers */
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem !important;
+    }
+
+    .page-header h1 {
+        font-size: 1.75rem !important;
+    }
+
+    /* Grid & Cards Responsive */
+    .dashboard-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem;
+    }
+
+    .card {
+        padding: 1.5rem !important;
+    }
+
+    .stat-card .stat-value {
+        font-size: 2rem;
+    }
+
+    /* Form responsiveness */
+    .card[style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    /* Table replacements / Data rows */
+    [style*="display: flex; justify-content: space-between"] {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Buttons */
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Sidebar Active States Helper */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 999;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    body.sidebar-open .sidebar-overlay {
+        display: block;
+        opacity: 1;
+    }
+
+    body.sidebar-open {
+        overflow: hidden;
+    }
+}

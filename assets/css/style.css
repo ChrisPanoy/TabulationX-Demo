@@ -2,6 +2,7 @@
    TabulationX Premium Static Demo CSS
    Synchronized with actual Tab_Src styles but enhanced for presentation.
 */
+@import url("mobile.css");
 
 :root {
     --primary: #3b42f3;
@@ -203,8 +204,6 @@ body {
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .sidebar { transform: translateX(-100%); }
-    .main-wrapper { margin-left: 0; }
-}
+
+/* Responsive adjustments are now handled in mobile.css */
+.mobile-toggle { display: none; }
